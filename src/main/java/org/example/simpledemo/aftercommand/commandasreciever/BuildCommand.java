@@ -12,7 +12,6 @@ public class BuildCommand implements Command {
 
     @Override
     public void Execute() {
-        System.out.println("Building " + projectName + "...");
-        System.out.println("Build complete");
+//        Builder.build("SDSFFsfd");
     }
 }

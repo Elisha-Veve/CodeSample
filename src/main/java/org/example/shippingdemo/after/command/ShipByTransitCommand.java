@@ -1,4 +1,4 @@
-package org.example.shippingdemo.after;
+package org.example.shippingdemo.after.command;
 
 import java.util.ArrayList;
 

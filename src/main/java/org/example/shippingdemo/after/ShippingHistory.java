@@ -1,17 +1,18 @@
 package org.example.shippingdemo.after;
 
+import org.example.shippingdemo.after.command.Command;
+
 import java.util.Stack;
 
 //Singleton
 public class ShippingHistory {
-    private Stack<Command> log;
     private Stack<Command> undoStack;
     private Stack<Command> redoStack;
 
     private static ShippingHistory instance;
 
     private ShippingHistory() {
-        log = new Stack<>();
+
         undoStack = new Stack<>();
         redoStack = new Stack<>();
     }
@@ -27,7 +28,7 @@ public class ShippingHistory {
         Command clone = command.clone();
         undoStack.add(clone);
         redoStack.clear();
-        log.add(clone);
+
     }
 
     public void undo() {
@@ -35,7 +36,7 @@ public class ShippingHistory {
             Command command = undoStack.pop();
             command.unexecute();
             redoStack.add(command);
-            log.add(command);
+
         }
     }
 
@@ -44,7 +45,7 @@ public class ShippingHistory {
             Command command = redoStack.pop();
             command.execute();
             undoStack.add(command);
-            log.add(command);
+
         }
 
     }

@@ -1,4 +1,6 @@
-package org.example.shippingdemo.after;
+package org.example.shippingdemo.after.command;
+
+import org.example.shippingdemo.after.receiver.ShippingCompany;
 
 public class ShipBySeaCommand extends Command {
     private String origin;
@@ -7,6 +9,10 @@ public class ShipBySeaCommand extends Command {
     public ShipBySeaCommand(String origin, String destination, ShippingCompany shippingCompany) {
         this.shippingCompany = shippingCompany;
         this.origin = origin;
+        this.destination = destination;
+    }
+
+    public void changeShippingDestination(String destination) {
         this.destination = destination;
     }
 

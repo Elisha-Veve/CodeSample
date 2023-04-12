@@ -1,4 +1,6 @@
-package org.example.shippingdemo.after;
+package org.example.shippingdemo.after.command;
+
+import org.example.shippingdemo.after.receiver.ShippingCompany;
 
 public class ShipByAirCommand extends Command {
     private String origin;
